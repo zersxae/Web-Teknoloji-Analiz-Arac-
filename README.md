@@ -1,39 +1,134 @@
-# yabancı dizi izle türkçe altyazılı türkçe dublaj izle Site Analizi
+# 🔍 Web Teknoloji Analiz Aracı
 
-## 📝 Site Bilgileri
-- **URL:** undefined
-- **Başlık:** yabancı dizi izle türkçe altyazılı türkçe dublaj izle
-- **Açıklama:** Trend olan tüm yabancı dizilerin ilk bölümlerini Hd ve 720p 1080p kalitesinde kesintisiz indirmeden izleyebilirsiniz, Yabancı filmleri sitemizde Türkçe dublaj olarak izleyebilirsiniz.
+Bu araç, herhangi bir web sitesinin kullandığı backend ve frontend teknolojilerini otomatik olarak analiz ederek detaylı bir rapor sunar. Modern ve kullanıcı dostu arayüzü sayesinde, web teknolojilerini kolayca keşfedebilirsiniz.
 
+![Web Teknoloji Analiz Aracı](https://via.placeholder.com/800x400?text=Web+Teknoloji+Analiz+Aracı)
 
+## 🚀 Özellikler
 
+### Backend Analizi
+- Sunucu teknolojisi tespiti (Apache, Nginx, IIS vb.)
+- Programlama dili tespiti (PHP, Node.js, Python vb.)
+- Framework tespiti (Laravel, Django, Flask vb.)
+- CMS sistemleri tespiti (WordPress, Drupal, Joomla vb.)
 
-## 🛠️ Kullanılan Teknolojiler
+### Frontend Analizi
+- JavaScript framework tespiti (React, Vue.js, Angular vb.)
+- CSS framework tespiti (Bootstrap, Tailwind CSS, Material UI vb.)
+- JavaScript kütüphane tespiti (jQuery vb.)
+- CDN kullanım analizi
 
+### Genel Özellikler
+- 🎯 Kullanıcı dostu arayüz
+- 🔄 Asenkron analiz sistemi
+- 📱 Responsive tasarım
+- ⚡ Hızlı sonuç
+- 🛡️ Hata yönetimi
 
+## 🛠️ Teknolojiler
 
+- **Backend**: Node.js, Express.js
+- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+- **Paketler**: axios, cheerio, cors
+- **Tasarım**: CSS Variables, Flexbox, Grid
+- **Font**: Inter (Google Fonts)
 
+## ⚙️ Kurulum
 
+1. Repoyu klonlayın:
+```bash
+git clone https://github.com/yourusername/site-analiz.git
+cd site-analiz
+```
 
-## 📊 Kaynak Kod İstatistikleri
-- CSS Dosyaları: 0
-- JavaScript Dosyaları: 0
+2. Bağımlılıkları yükleyin:
+```bash
+npm install
+```
 
-## 🔍 Analiz Sonuçları
-Bu site analizi [Web Teknoloji Analiz Aracı](https://github.com/zersxae/Web-Teknoloji-Analiz-Arac-) kullanılarak gerçekleştirilmiştir.
+3. Uygulamayı başlatın:
+```bash
+# Geliştirme modu
+npm run dev
 
-### Öne Çıkan Özellikler
-- Modern web teknolojileri kullanımı
-- SEO uyumlu yapı
-- Performans optimizasyonları
+# Prodüksiyon modu
+npm start
+```
 
-## 📈 Geliştirme Önerileri
-1. Sayfa yükleme hızını artırma
-2. Güvenlik önlemlerini güçlendirme
-3. SEO optimizasyonlarını geliştirme
+4. Tarayıcınızda açın:
+```
+http://localhost:3000
+```
 
-## 🔒 Güvenlik Notları
-Bu analiz tamamen yasal ve etik sınırlar içerisinde gerçekleştirilmiştir. Herhangi bir güvenlik açığı veya hassas bilgi paylaşılmamıştır.
+## 📡 API Kullanımı
 
-## 📝 Lisans
-Bu analiz raporu MIT lisansı altında sunulmaktadır.
+### Site Analizi Endpoint'i
+
+```http
+GET /analyze?url=https://example.com
+```
+
+#### Başarılı Yanıt (200 OK)
+
+```json
+{
+  "url": "https://example.com",
+  "backend": {
+    "server": "Apache",
+    "powered_by": "PHP/8.1",
+    "detected_frameworks": ["WordPress", "Laravel"]
+  },
+  "frontend": {
+    "javascript_frameworks": ["React", "jQuery"],
+    "css_frameworks": ["Bootstrap", "Tailwind CSS"],
+    "cdn_libraries": ["Google Fonts", "Cloudflare CDN"]
+  }
+}
+```
+
+#### Hata Yanıtları
+
+- `400 Bad Request`: Geçersiz veya eksik URL
+- `500 Internal Server Error`: Sunucu hatası
+
+## 🔍 Tespit Edilen Teknolojiler
+
+### Backend Teknolojileri
+- Web Sunucuları: Apache, Nginx, IIS
+- Programlama Dilleri: PHP, Node.js, Python, Ruby
+- Frameworks: Laravel, Django, Flask, Ruby on Rails
+- CMS: WordPress, Drupal, Joomla
+
+### Frontend Teknolojileri
+- JavaScript Frameworks: React, Vue.js, Angular
+- CSS Frameworks: Bootstrap, Tailwind CSS, Material UI
+- JavaScript Libraries: jQuery, Lodash
+- CDN Servisleri: Cloudflare, Google Fonts, jsDelivr
+
+## 🤝 Katkıda Bulunma
+
+1. Bu repoyu fork edin
+2. Yeni bir branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Değişikliklerinizi commit edin (`git commit -m 'feat: amazing new feature'`)
+4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
+5. Pull Request oluşturun
+
+## 📝 Yapılacaklar
+
+- [ ] Daha fazla framework desteği
+- [ ] Versiyon tespiti
+- [ ] Performans analizi
+- [ ] SSL sertifika bilgileri
+- [ ] DNS kayıtları analizi
+- [ ] Raporları PDF olarak dışa aktarma
+
+## 📜 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyebilirsiniz.
+
+## 📞 İletişim
+
+- E-posta: zersxae@gmail.com
+
+---
+⭐️ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın! 

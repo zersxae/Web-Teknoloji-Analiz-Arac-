@@ -1,78 +1,18 @@
 {
   "version": 2,
-  "name": "site-analiz",
   "builds": [
     {
       "src": "src/index.js",
-      "use": "@vercel/node@2.15.8"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/src/index.js"
-    },
-    {
-      "src": "/api-docs",
-      "dest": "src/index.js"
-    },
-    {
-      "src": "/health",
-      "dest": "src/index.js"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/src/index.js"
+      "dest": "src/index.js"
     }
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "public": true,
-  "regions": ["fra1"],
-  "functions": {
-    "src/index.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "X-Requested-With, Content-Type, Accept"
-        }
-      ]
-    }
-  ]
+  }
 } 
