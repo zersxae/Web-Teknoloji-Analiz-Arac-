@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Teknoloji Analiz Aracı</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Web Teknoloji Analiz Aracı</h1>
+            <p>Herhangi bir web sitesinin kullandığı teknolojileri detaylı olarak analiz edin</p>
+        </header>
+
+        <main>
+            <div class="search-box">
+                <input type="url" id="urlInput" placeholder="https://example.com" required>
+                <button id="analyzeBtn">Analiz Et</button>
+            </div>
+
+            <div id="loadingIndicator" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Detaylı analiz yapılıyor...</p>
+            </div>
+
+            <div id="results" class="results hidden">
+                <!-- Backend Teknolojileri -->
+                <div class="result-section">
+                    <h2>📡 Backend Teknolojileri</h2>
+                    <div class="tech-grid" id="backendResults">
+                        <!-- Backend sonuçları buraya gelecek -->
+                    </div>
+                </div>
+
+                <!-- Frontend Teknolojileri -->
+                <div class="result-section">
+                    <h2>🎨 Frontend Teknolojileri</h2>
+                    <div class="tech-grid" id="frontendResults">
+                        <!-- Frontend sonuçları buraya gelecek -->
+                    </div>
+                </div>
+
+                <!-- Güvenlik Analizi -->
+                <div class="result-section">
+                    <h2>🛡️ Güvenlik Analizi</h2>
+                    <div class="tech-grid" id="securityResults">
+                        <!-- Güvenlik sonuçları buraya gelecek -->
+                    </div>
+                </div>
+
+                <!-- Sunucu Bilgileri -->
+                <div class="result-section">
+                    <h2>🖥️ Sunucu Bilgileri</h2>
+                    <div class="tech-grid" id="serverResults">
+                        <!-- Sunucu bilgileri buraya gelecek -->
+                    </div>
+                </div>
+
+                <!-- SEO Analizi -->
+                <div class="result-section">
+                    <h2>📊 SEO Analizi</h2>
+                    <div class="tech-grid" id="seoResults">
+                        <!-- SEO sonuçları buraya gelecek -->
+                    </div>
+                </div>
+
+                <!-- Performans Metrikleri -->
+                <div class="result-section">
+                    <h2>⚡ Performans Metrikleri</h2>
+                    <div class="tech-grid" id="performanceResults">
+                        <!-- Performans sonuçları buraya gelecek -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="error" class="error hidden">
+                <!-- Hata mesajı buraya gelecek -->
+            </div>
+        </main>
+
+        <footer>
+            <p>Bu araç açık kaynak kodludur. <a href="https://github.com/yourusername/site-analiz" target="_blank">GitHub'da İnceleyin</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

@@ -1,0 +1,45 @@
+---
+description: Web Teknoloji Analiz Aracı Kuralları
+globs: 
+alwaysApply: false
+---
+# Web Teknoloji Analiz Aracı Kuralları
+
+## 1️⃣ Genel Kurallar
+- Tüm kodlar **modüler** yazılmalıdır.
+- `src/` klasöründe **her işlev ayrı bir dosyada** olmalıdır.
+- **Asenkron programlama** prensiplerine uyulmalıdır.
+- Hata yönetimi (`try/catch`) **tüm fonksiyonlarda uygulanmalıdır.**
+
+## 2️⃣ Backend Analiz Kuralları
+- HTTP yanıt başlıkları (`X-Powered-By`, `Server`) **kontrol edilmelidir.**
+- **CMS veya framework kullanımı** meta tag'lerden analiz edilmelidir.
+- URL uzantılarından (`.php`, `.aspx`, `.jsp`) backend teknolojisi tespit edilmelidir.
+
+## 3️⃣ Frontend Analiz Kuralları
+- HTML içinde **<script> ve <link> etiketleri** taranmalıdır.
+- **JavaScript frameworkleri** (React, Vue, Angular) otomatik tespit edilmelidir.
+- CSS frameworkleri (Bootstrap, Tailwind CSS) belirlenmelidir.
+
+## 4️⃣ Güvenlik Kuralları
+- `helmet`, `cors`, `express-rate-limit` gibi **güvenlik önlemleri** uygulanmalıdır.
+- Kullanıcıdan gelen URL, **XSS ve SSRF saldırılarına karşı filtrelenmelidir.**
+- API **rate limit** uygulanarak, kötüye kullanım engellenmelidir.
+
+## 5️⃣ Çıktı Formatı Kuralları
+- JSON formatında detaylı ve okunabilir bir çıktı oluşturulmalıdır.
+- Örnek:
+  ```json
+  {
+    "url": "https://example.com",
+    "backend": {
+      "server": "Apache",
+      "powered_by": "PHP/8.1",
+      "detected_frameworks": ["WordPress", "Laravel"]
+    },
+    "frontend": {
+      "javascript_frameworks": ["React", "jQuery"],
+      "css_frameworks": ["Bootstrap", "Tailwind CSS"],
+      "cdn_libraries": ["Google Fonts", "Cloudflare CDN"]
+    }
+  }
