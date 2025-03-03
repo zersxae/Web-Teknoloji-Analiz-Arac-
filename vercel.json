@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "site-analiz",
   "builds": [
     {
       "src": "src/index.js",
@@ -12,19 +11,5 @@
       "src": "/(.*)",
       "dest": "/src/index.js"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production",
-    "MAX_BODY_SIZE": "50mb",
-    "MAX_DURATION": "10"
-  },
-  "public": true,
-  "regions": ["fra1"],
-  "functions": {
-    "src/index.js": {
-      "memory": 1024,
-      "maxDuration": 10,
-      "includeFiles": "src/**/*"
-    }
-  }
+  ]
 } 
