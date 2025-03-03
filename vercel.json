@@ -1,9 +1,14 @@
 {
   "version": 2,
+  "name": "site-analiz",
   "builds": [
     {
       "src": "src/index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -21,31 +26,38 @@
     },
     {
       "src": "/(.*)",
-      "dest": "src/index.js"
+      "dest": "/public/$1"
     }
   ],
   "env": {
     "NODE_ENV": "production"
   },
+  "regions": ["fra1"],
+  "functions": {
+    "src/index.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  },
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/(.*)",
       "headers": [
         {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
         },
         {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"
+          "key": "X-Frame-Options",
+          "value": "DENY"
         },
         {
-          "key": "Access-Control-Allow-Headers",
-          "value": "X-Requested-With, Content-Type, Accept"
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
         },
         {
-          "key": "Cache-Control",
-          "value": "s-maxage=60, stale-while-revalidate"
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         }
       ]
     }
