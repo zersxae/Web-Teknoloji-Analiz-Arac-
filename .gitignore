@@ -1,10 +1,58 @@
-node_modules
-.env
-.env.local
-.vercel
-.next
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage and test directories
+coverage
+*.lcov
+.nyc_output
+
+# Dependency directories
+node_modules/
+jspm_packages/
+bower_components
+
+# Build outputs
 dist
 build
-coverage
+.next
+out
+.nuxt
+
+# Environment and local files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Cache directories
+.cache
+.parcel-cache
+.npm
+.eslintcache
+.stylelintcache
+
+# Editor and OS files
+.vscode-test
 .DS_Store
-*.log 
+.vercel
+
+# Other
+*.tsbuildinfo
+.serverless/
+.dynamodb/
+.tern-port
+.yarn/
+.pnp.*
