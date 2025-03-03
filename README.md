@@ -5,7 +5,7 @@ Bu araç, herhangi bir web sitesinin kullandığı backend ve frontend teknoloji
 
 ## 🌐 Demo
 
-[Live Demo](https://site-analiz.vercel.app)
+[Live Demo](https://site-analiz-six.vercel.app/)
 
 ## 🚀 Özellikler
 

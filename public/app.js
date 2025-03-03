@@ -161,7 +161,24 @@ document.addEventListener('DOMContentLoaded', () => {
         performanceResults.appendChild(createTechItem('Cache Control', data.performance.cache_control));
         performanceResults.appendChild(createTechItem('Resource Hints', data.performance.resource_hints, 'object'));
 
+        // Bağış kısmını göster
+        displayDonationSection();
+
         results.classList.remove('hidden');
+    }
+
+    function displayDonationSection() {
+        const donationSection = document.createElement('div');
+        donationSection.id = 'donation';
+        donationSection.innerHTML = `
+            <h4>Bağış Yapmak İster Misiniz?</h4>
+            <p>Bağışlarınız, projeyi geliştirmeme ve daha fazla içerik üretmeme yardımcı olacaktır. Teşekkürler!</p>
+            <div id="iframe-container">
+                <iframe src="https://buymeacoffee.com/zers" width="100%" height="500" frameborder="0" style="border-radius: 5px; overflow: hidden;"></iframe>
+            </div>
+        `;
+        
+        results.appendChild(donationSection);
     }
 
     // Enter tuşu ile analiz
