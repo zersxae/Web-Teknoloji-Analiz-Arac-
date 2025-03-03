@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "vercel-build": "echo 'Build step completed'"
+    "vercel-build": "yum install -y cairo cairo-devel giflib-devel libjpeg-devel"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -21,7 +21,7 @@
     "https-proxy-agent": "^7.0.2",
     "socks-proxy-agent": "^8.0.2",
     "compression": "^1.7.4",
-    "canvas": "^2.11.2"
+    "@napi-rs/canvas": "^0.1.44"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
