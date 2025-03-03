@@ -356,8 +356,10 @@ process.on('unhandledRejection', (err) => {
 });
 
 // Export for Vercel
-module.exports = app;
-
-app.listen(PORT, () => {
-    console.log(`Server http://localhost:${PORT} adresinde çalışıyor`);
-}); 
+if (process.env.VERCEL) {
+    module.exports = app;
+} else {
+    app.listen(PORT, () => {
+        console.log(`Server http://localhost:${PORT} adresinde çalışıyor`);
+    });
+} 

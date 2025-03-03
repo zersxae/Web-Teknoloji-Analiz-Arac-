@@ -4,14 +4,10 @@
   "builds": [
     {
       "src": "src/index.js",
-      "use": "@vercel/node@2.15.8"
+      "use": "@vercel/node"
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/src/index.js"
-    },
     {
       "src": "/(.*)",
       "dest": "/src/index.js"
@@ -28,7 +24,7 @@
     "src/index.js": {
       "memory": 1024,
       "maxDuration": 10,
-      "includeFiles": ["src/**"]
+      "includeFiles": "src/**/*"
     }
   }
 } 
