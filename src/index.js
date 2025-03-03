@@ -138,15 +138,6 @@ app.get('/analyze', async (req, res) => {
         const analysis = await analyzeWebsite(url);
         const trafficStats = getTrafficStats(url);
 
-        // Görsel grafikleri oluştur
-        const charts = {
-            technology: visualizer.createTechnologyDistributionChart(analysis),
-            performance: visualizer.createPerformanceChart(analysis),
-            security: visualizer.createSecurityScoreChart(analysis),
-            resources: visualizer.createResourceSizeChart(analysis),
-            traffic: visualizer.createTrafficChart(trafficStats.dailyData)
-        };
-
         // Analiz sonuçlarını HTML olarak gönder
         res.send(`
             <!DOCTYPE html>
@@ -243,24 +234,6 @@ app.get('/analyze', async (req, res) => {
                         </div>
 
                         <div class="result-section">
-                            <h2>📊 Grafikler</h2>
-                            <div class="charts-grid">
-                                <div class="chart-item">
-                                    <h3>Teknoloji Dağılımı</h3>
-                                    <img src="data:image/png;base64,${charts.technology.toString('base64')}" alt="Teknoloji Dağılımı">
-                                </div>
-                                <div class="chart-item">
-                                    <h3>Performans Metrikleri</h3>
-                                    <img src="data:image/png;base64,${charts.performance.toString('base64')}" alt="Performans Metrikleri">
-                                </div>
-                                <div class="chart-item">
-                                    <h3>Güvenlik Skoru</h3>
-                                    <img src="data:image/png;base64,${charts.security.toString('base64')}" alt="Güvenlik Skoru">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="result-section">
                             <h2>📈 Trafik Analizi</h2>
                             <div class="traffic-stats">
                                 <div class="stat-card">
@@ -275,10 +248,6 @@ app.get('/analyze', async (req, res) => {
                                     <span class="stat-value">${trafficStats.averageDaily}</span>
                                     <span class="stat-label">Ortalama Günlük Ziyaret</span>
                                 </div>
-                            </div>
-                            <div class="chart-item">
-                                <h3>Son 7 Gün Trafik Grafiği</h3>
-                                <img src="data:image/png;base64,${charts.traffic.toString('base64')}" alt="Trafik Grafiği">
                             </div>
                         </div>
 
