@@ -143,9 +143,19 @@ button:hover {
     background-color: #fee2e2;
     border: 1px solid var(--error-color);
     color: var(--error-color);
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 0.5rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.error h2 {
+    margin-bottom: 1rem;
+}
+
+.error p {
+    margin-bottom: 1.5rem;
 }
 
 .hidden {
@@ -198,4 +208,398 @@ footer a:hover {
     width: 100%;
     height: 500px; /* İsteğe bağlı olarak yükseklik ayarlayın */
     border: none; /* Kenarlık kaldırıldı */
+}
+
+.api-badge {
+    margin-top: 1rem;
+}
+
+.api-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.api-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+footer a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+
+.api-docs-link, .contact-link {
+    margin: 0 0.5rem;
+}
+
+.donation-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--background-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.donation-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.donation-section p {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+.donation-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.donation-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.donation-header {
+    margin-bottom: 1.5rem;
+}
+
+.donation-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.donation-card h4 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.donation-card p {
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+.donation-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.donation-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.coffee-button {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    color: #742a1c;
+}
+
+.github-button {
+    background: linear-gradient(135deg, #434343 0%, #000000 100%);
+    color: white;
+}
+
+.donation-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.donation-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+}
+
+.feature span:last-child {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+@media (max-width: 640px) {
+    .donation-options {
+        flex-direction: column;
+    }
+
+    .donation-features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.traffic-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.traffic-chart {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 640px) {
+    .traffic-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+.back-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.chart-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chart-item h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.chart-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+/* Loading Animations */
+.loading-content {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.loading-steps {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: var(--background-color);
+    transition: all 0.3s ease;
+}
+
+.step i {
+    font-size: 1.2rem;
+    color: var(--border-color);
+}
+
+.step.active i {
+    color: var(--primary-color);
+}
+
+.step.completed i {
+    color: var(--success-color);
+}
+
+.btn-loader {
+    margin-left: 0.5rem;
+}
+
+.btn-loader i {
+    animation: spin 1s linear infinite;
+}
+
+/* Source Download Section */
+.source-download {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.source-download h2 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.source-download p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+#downloadBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#downloadBtn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+#downloadBtn i {
+    font-size: 1.2rem;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Loading Steps Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.step.active {
+    background: #f0f9ff;
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .loading-steps {
+        max-width: 100%;
+    }
+
+    .step {
+        padding: 0.75rem;
+    }
+
+    #downloadBtn {
+        width: 100%;
+        justify-content: center;
+    }
 }

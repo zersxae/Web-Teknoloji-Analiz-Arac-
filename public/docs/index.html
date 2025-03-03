@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Dokümantasyonu - Web Teknoloji Analiz Aracı</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="docs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 API Dokümantasyonu</h1>
+            <p>Web Teknoloji Analiz Aracı API'sini kullanarak kendi uygulamalarınızı geliştirebilirsiniz</p>
+            <div class="api-badge">
+                <a href="/" class="api-link">🏠 Ana Sayfaya Dön</a>
+            </div>
+        </header>
+
+        <main class="docs-content">
+            <section class="endpoint">
+                <h2>GET /api/analyze</h2>
+                <p>Belirtilen URL'deki web sitesinin teknik analizini yapar.</p>
+
+                <h3>Parametreler</h3>
+                <div class="params">
+                    <code>url</code> - Analiz edilecek web sitesinin URL'i (zorunlu)
+                </div>
+
+                <h3>Örnek İstek</h3>
+                <pre><code>GET /api/analyze?url=https://example.com</code></pre>
+
+                <h3>Başarılı Yanıt (200 OK)</h3>
+                <pre><code>{
+  "url": "https://example.com",
+  "backend": {
+    "server": "nginx/1.18.0",
+    "detected_frameworks": ["Laravel", "PHP"]
+  },
+  "frontend": {
+    "javascript_frameworks": ["Vue.js"],
+    "css_frameworks": ["Tailwind CSS"]
+  },
+  "security": {
+    "ssl_score": 90,
+    "headers": {
+      "Content-Security-Policy": "..."
+    }
+  }
+}</code></pre>
+            </section>
+
+            <section class="endpoint">
+                <h2>GET /api/extract</h2>
+                <p>Web sitesinin HTML, CSS ve JavaScript kaynak kodlarını çeker ve düzenler.</p>
+
+                <h3>Parametreler</h3>
+                <div class="params">
+                    <code>url</code> - Kaynak kodu çekilecek web sitesinin URL'i (zorunlu)
+                </div>
+
+                <h3>Örnek İstek</h3>
+                <pre><code>GET /api/extract?url=https://example.com</code></pre>
+
+                <h3>Başarılı Yanıt (200 OK)</h3>
+                <pre><code>{
+  "html": "<!DOCTYPE html>...",
+  "css": {
+    "files": [
+      {
+        "url": "https://example.com/style.css",
+        "content": "..."
+      }
+    ],
+    "inline": []
+  },
+  "javascript": {
+    "files": [],
+    "inline": ["..."]
+  }
+}</code></pre>
+            </section>
+
+            <section class="rate-limits">
+                <h2>⚠️ Kullanım Limitleri</h2>
+                <ul>
+                    <li>IP başına dakikada maksimum 60 istek</li>
+                    <li>Her analiz için maksimum 30 saniye timeout süresi</li>
+                    <li>Maksimum dosya boyutu: 10MB</li>
+                </ul>
+            </section>
+
+            <section class="errors">
+                <h2>🚫 Hata Kodları</h2>
+                <table>
+                    <tr>
+                        <th>Kod</th>
+                        <th>Açıklama</th>
+                    </tr>
+                    <tr>
+                        <td>400</td>
+                        <td>Geçersiz istek (URL parametresi eksik veya hatalı)</td>
+                    </tr>
+                    <tr>
+                        <td>429</td>
+                        <td>Çok fazla istek (Rate limit aşıldı)</td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td>Sunucu hatası</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+            <p>Bu araç açık kaynak kodludur. <a href="https://github.com/zersxae/Web-Teknoloji-Analiz-Arac-" target="_blank">GitHub'da İnceleyin</a></p>
+        </footer>
+    </div>
+</body>
+</html> 

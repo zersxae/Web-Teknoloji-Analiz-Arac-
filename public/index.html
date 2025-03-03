@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Teknoloji Analiz Aracı</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,12 +18,37 @@
         <main>
             <div class="search-box">
                 <input type="url" id="urlInput" placeholder="https://example.com" required>
-                <button id="analyzeBtn">Analiz Et</button>
+                <button id="analyzeBtn" onclick="startAnalysis()">
+                    <span class="btn-text">Analiz Et</span>
+                    <span class="btn-loader hidden">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </span>
+                </button>
             </div>
 
             <div id="loadingIndicator" class="loading hidden">
-                <div class="spinner"></div>
-                <p>Detaylı analiz yapılıyor...</p>
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <p id="loadingText">Site analiz ediliyor...</p>
+                    <div class="loading-steps">
+                        <div class="step">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bağlantı kuruluyor</span>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-circle"></i>
+                            <span>Teknolojiler tespit ediliyor</span>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-circle"></i>
+                            <span>Performans ölçülüyor</span>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-circle"></i>
+                            <span>Güvenlik analizi yapılıyor</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="results" class="results hidden">
@@ -75,13 +101,23 @@
                 </div>
             </div>
 
+            <div id="sourceDownload" class="source-download hidden">
+                <h2>📥 Kaynak Kodları İndir</h2>
+                <p>Sitenin kaynak kodlarını ZIP olarak indirebilirsiniz.</p>
+                <button id="downloadBtn" onclick="downloadSources()">
+                    <i class="fas fa-download"></i>
+                    Kaynakları İndir
+                </button>
+            </div>
+
             <div id="error" class="error hidden">
                 <!-- Hata mesajı buraya gelecek -->
             </div>
         </main>
 
         <footer>
-            <p>Bu araç açık kaynak kodludur. <a href="https://github.com/zersxae/Web-Teknoloji-Analiz-Arac-" target="_blank">GitHub'da İnceleyin</a></p>
+            <p>Bu araç açık kaynak kodludur. <a href="https://github.com/zersxae/Web-Teknoloji-Analiz-Arac-" target="_blank">GitHub'da İnceleyin</a> | 
+            <a href="/docs" class="api-docs-link">API Dokümantasyonu</a></p>
         </footer>
     </div>
 
